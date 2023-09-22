@@ -1,11 +1,6 @@
 package org.example;
-
-import static j2html.TagCreator.*;
+import org.example.Reader;
 
 public class Main {
-    public static void main(String[] args) {
-        System.out.print(body(
-                h1("Hello, World!")
-        ).render());
-    }
+
 }
