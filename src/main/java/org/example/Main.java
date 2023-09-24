@@ -7,6 +7,9 @@ import java.util.Properties;
 public class Main {
     public static void main(String[] args) throws IOException {
         Properties config = Reader.newPropFile("files/ii.properties");
-        System.out.println(Reader.getFromIndex(config, 5));
+        for (int i = 0; i < 6; i++){
+            System.out.println(Reader.getFromIndex(config, i));
+        }
+
     }
 }

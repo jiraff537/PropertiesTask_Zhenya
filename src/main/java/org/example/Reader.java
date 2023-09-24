@@ -23,7 +23,12 @@ public class Reader {
     public static String[] getAll(Properties properties){
         return new String[10];
     }
-    public static String getKey(Properties propertiesint, int i){
-        return "все ключи или ключ по индексу - "+i;
+    public static String[] getKey(Properties properties, int i){
+        Set<String> propertyNames = properties.stringPropertyNames();
+        String[] propertyKeys = propertyNames.toArray(new String[0]);
+        if (i == -1){
+            return propertyKeys;
+        }
+        return new String[]{propertyKeys[i]};
     }
 }
