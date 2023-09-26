@@ -5,15 +5,15 @@ import java.util.Properties;
 public class HTML_Builder {
     public static void Build(Properties properties, String filePath){
         StringBuilder htmlContent = new StringBuilder();
-        htmlContent.append("<html>\n");
-        htmlContent.append("<head><title>Резюме</title></head>\n");
+        htmlContent.append("<!DOCTYPE html>\n<html>\n");
+        htmlContent.append("<head>\n<title>Резюме</title>\n<meta charset=\"UTF-8\">\n</head>\n");
         htmlContent.append("<body>\n");
         htmlContent.append("<h1>Мое резюме</h1>\n");
 
         for (String key : properties.stringPropertyNames()) {
             String value = properties.getProperty(key);
             if (value.contains("http")){
-                htmlContent.append("<p>").append(key).append(": ").append("<a href=").append(value).append(">").append(value).append("</a>").append("</p>\n");
+                htmlContent.append("<p>").append(key).append(": ").append("<img src='").append(value).append("' width='100' >").append("</p>\n");
             }else{
                 htmlContent.append("<p>").append(key).append(": ").append(value).append("</p>\n");
             }
