@@ -13,7 +13,7 @@ public class HTML_Builder {
         for (String key : properties.stringPropertyNames()) {
             String value = properties.getProperty(key);
             if (value.contains("http")){
-                htmlContent.append("<p>").append(key).append(": ").append("<img src='").append(value).append("' width='100' >").append("</p>\n");
+                htmlContent.append("<p>").append(key).append(": ").append("<a href='").append(value).append("'>").append("<img src='").append(value).append("' width='60' alt='ССЫЛКА'>").append("</a>").append("</p>\n");
             }else{
                 htmlContent.append("<p>").append(key).append(": ").append(value).append("</p>\n");
             }
